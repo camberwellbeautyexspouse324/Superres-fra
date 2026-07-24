@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# CodeFormer (cloned at runtime by the notebook, not vendored -- weights alone
+# are 400MB+, too large for a normal git repo without Git LFS)
+CodeFormer/
+codeformer_results/
+
+# Media
+*.jpg
+*.jpeg
+*.png
+*.mp4
+!assets/**/*.jpg
+!assets/**/*.jpeg
+!assets/**/*.png
+
+# OS
+.DS_Store
+Thumbs.db
