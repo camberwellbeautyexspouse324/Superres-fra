@@ -10,7 +10,7 @@ This is a **preprocessing step** in the larger pipeline: it runs when a detected
 
 | Before (low-res input) | After (CodeFormer restored) |
 |---|---|
-| ![Before](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/superres-fr/main/assets/test-image-01.jpg) | ![After](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/superres-fr/main/assets/result-image-01.jpg) |
+| ![Before](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/Superres-fr/refs/heads/main/assets/superres-test-image-04.jpg) | ![After](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/Superres-fr/refs/heads/main/assets/result.png) |
 
 ## How It Works
 
